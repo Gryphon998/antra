@@ -17,17 +17,12 @@ public class UserController {
         this.restTemplate = restTemplate;
     }
 
-    @GetMapping("/users")
-    public ResponseEntity<String> getUsers() {
-        String url = "https://jsonmock.hackerrank.com/api/article_users";
-        ArticleUserResponse response = restTemplate.getForObject(url, ArticleUserResponse.class);
-        return ResponseEntity.ok(response);
-    }
 
     @GetMapping("/users")
-    public ResponseEntity<String> getUsers(@RequestParam int page) {
+    public ResponseEntity<String> getUsers(@RequestParam(value = "page", required = false, defaultValue = "1") int page) {
         String url = "https://jsonmock.hackerrank.com/api/article_user?page=" + page;
         ArticleUserResponse response = restTemplate.getForObject(url, ArticleUserResponse.class);
+
         return ResponseEntity.ok(response);
     }
 }
