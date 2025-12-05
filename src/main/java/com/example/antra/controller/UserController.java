@@ -1,6 +1,6 @@
 package com.example.antra.controller;
 
-import com.example.antra.Dto.ArticleUserResponse;
+import com.example.antra.dto.ArticleUserResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

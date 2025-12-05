@@ -1,4 +1,4 @@
-package com.example.antra.Dto;
+package com.example.antra.dto;
 
 import lombok.Data;
 
