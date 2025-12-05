@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping("/users")
     public ResponseEntity<String> getUsers(@RequestParam(value = "page", required = false, defaultValue = "1") int page) {
-        String url = "https://jsonmock.hackerrank.com/api/article_user?page=" + page;
+        String url = "https://jsonmock.hackerrank.com/api/article_users?page=" + page;
         ArticleUserResponse response = restTemplate.getForObject(url, ArticleUserResponse.class);
 
         return ResponseEntity.ok(response);
