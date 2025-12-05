@@ -1,5 +1,6 @@
 package com.example.antra.controller;
 
+import com.example.antra.Dto.ArticleUserResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,14 +20,14 @@ public class UserController {
     @GetMapping("/users")
     public ResponseEntity<String> getUsers() {
         String url = "https://jsonmock.hackerrank.com/api/article_users";
-        String response = restTemplate.getForObject(url, String.class);
+        ArticleUserResponse response = restTemplate.getForObject(url, ArticleUserResponse.class);
         return ResponseEntity.ok(response);
     }
 
     @GetMapping("/users")
     public ResponseEntity<String> getUsers(@RequestParam int page) {
-        String url = "https://jsonmock.hackerrank.com/api/article_users" + page;
-        String response = restTemplate.getForObject(url, String.class);
+        String url = "https://jsonmock.hackerrank.com/api/article_user?page=" + page;
+        ArticleUserResponse response = restTemplate.getForObject(url, ArticleUserResponse.class);
         return ResponseEntity.ok(response);
     }
 }
