@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - preConditions:
+      - onError: HALT
+      - onFail: HALT
+  - includeAll:
+      path: sql/
+      relativeToChangelogFile: true
+      errorIfMissingOrEmpty: false
